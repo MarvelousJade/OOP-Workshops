@@ -13,7 +13,7 @@ namespace seneca {
    /// <param name="minVal">int: Minimum acceptable value</param>
    /// <param name="maxVal">int: Maximum acceptable value</param>
    /// <returns>The integer read from the console</returns>
-   
+   int getInt(int minVal, int maxVal);
 
    /// <summary>
    /// Performs an integer entry from the console only if the values are within the acceptable limits.
