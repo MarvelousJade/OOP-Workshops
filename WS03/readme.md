@@ -1,7 +1,13 @@
-# Workshop #3: Member Functions and Privacy
-
+# Workshop #3: Member Functions and Privacy (V1.2)
 In this workshop, you will implement member functions, privacy and a safe empty state for a class.
 
+## Updates
+### [Version (1.3)](#prnnumber)
+Released the code for prnNubmer() function because the workshop is not focused on formatting
+### [Version (1.2)](#set-overloaded-with-five-arguments)
+Typo in default arguments in five arg set for expYear
+### [Version (1.1)](#set-overloaded-with-five-arguments)
+Added default arguments to the five-argument set function for clarity
 
 ## Learning Outcomes
 
@@ -228,8 +234,10 @@ This function does not modify the object (is constant).
 #### prnNumber
 
 ```C++
-void prnNumber(unsigned long long CCnum)const;
+void prnNumber(unsigned long long CCnum)const; 
 ```
+The code for this method is provided
+
 This function prints a 16-digit number in a set of 4-digit numbers separated by spaces.
 
 For example:  
@@ -268,9 +276,9 @@ Returns if the CC object is in a safe empty state or not; by returning true if t
 ```C++
 void set(const char* cc_name, 
          unsigned long long cc_no, 
-         short m_cvv, 
-         short m_expMon, 
-         short m_expYear);
+         short cvv, 
+         short expMon = 12, 
+         short expYear = 24);
 ```
 First, it will `cleanUp()` the object to a safe empty state. Then if all the arguments are valid using `validate()`, it will dynamically keep a copy of the name in the name attribute (using `alocpy function in cstr.h`) and then sets the rest of the attributes to their corresponding values. 
 

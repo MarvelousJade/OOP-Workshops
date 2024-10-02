@@ -350,7 +350,7 @@ Make sure `file.cpp` mutes the CRT_SECURE warnings by applying `#define _CRT_SEC
 
 Also, include the header file needed for `fscanf`.
 
-Add the global `File* fptr;` above all of the functions inside the namespace. 
+Add the global `FILE* fptr;` above all of the functions inside the namespace. 
 
 ### movie module
 Definitions:
