@@ -12,6 +12,9 @@ namespace seneca {
       Account(int number, double balance);
       std::ostream& display()const;
       operator bool() const;
+      bool operator~() const;
+      Account& operator+=(double balance);
+      Account& operator-=(double balance);
    };
 
 

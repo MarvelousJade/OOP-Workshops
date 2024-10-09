@@ -52,5 +52,15 @@ namespace seneca {
 
        return n >=5 && m_balance >= 0; 
    }
- 
+   bool Account::operator~() {
+       return m_number == 0;
+    }
+   Account& Account::operator+=(double balance) {
+       if (*this) m_balance += balance;
+       return *this;
+   }
+   Account& Account::operator-=(double balance) {
+       if (*this) m_balance -= balance;
+       return *this;
+   }
 }
