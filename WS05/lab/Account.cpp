@@ -75,4 +75,13 @@ namespace seneca {
 
        return *this;
    }
+   Account& Account::operator=(Account& newAccount) {
+       if (m_number == 0 && newAccount) {
+		   m_number = newAccount.m_number;
+		   m_balance = newAccount.m_balance;
+		   newAccount.m_number = 0;
+		   newAccount.m_balance = 0;
+       }
+       return *this;
+   }
 }
