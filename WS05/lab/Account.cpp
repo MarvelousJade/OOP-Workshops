@@ -98,4 +98,11 @@ namespace seneca {
        }
        return *this;
    }
+   double operator+(Account& leftAccount, Account& rightAccount) {
+       double sum;
+       if (leftAccount && rightAccount && leftAccount.m_number != rightAccount.m_number) {
+           sum = leftAccount.m_balance + rightAccount.m_balance;
+       }
+       return sum;
+   }
 }

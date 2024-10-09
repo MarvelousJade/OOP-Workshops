@@ -19,8 +19,7 @@ namespace seneca {
       Account& operator=(Account&);
       Account& operator<<(Account&);
       Account& operator>>(Account&);
+      friend double operator+(Account&, Account&);
    };
-
-
 }
 #endif // SENECA_ACCOUNT_H_
