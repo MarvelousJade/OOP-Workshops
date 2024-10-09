@@ -60,7 +60,7 @@ namespace seneca {
        return *this;
    }
    Account& Account::operator-=(double balance) {
-       if (*this) m_balance -= balance;
+       if (*this && m_balance >= balance && balance > 0) m_balance -= balance;
        return *this;
    }
    Account& Account::operator=(int number) {
@@ -81,6 +81,20 @@ namespace seneca {
 		   m_balance = newAccount.m_balance;
 		   newAccount.m_number = 0;
 		   newAccount.m_balance = 0;
+       }
+       return *this;
+   }
+   Account& Account::operator<<(Account& rightAccount) {
+       if (*this && rightAccount && m_number != rightAccount.m_number) {
+           m_balance += rightAccount.m_balance;
+           rightAccount.m_balance = 0;
+       }
+       return *this;
+   }
+   Account& Account::operator>>(Account& rightAccount) {
+       if (*this && rightAccount && m_number != rightAccount.m_number) {
+           rightAccount.m_balance += m_balance;
+            m_balance = 0;
        }
        return *this;
    }

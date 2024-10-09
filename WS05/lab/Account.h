@@ -17,6 +17,8 @@ namespace seneca {
       Account& operator-=(double balance);
       Account& operator=(int number);
       Account& operator=(Account&);
+      Account& operator<<(Account&);
+      Account& operator>>(Account&);
    };
 
 
