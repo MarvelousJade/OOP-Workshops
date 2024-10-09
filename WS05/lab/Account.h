@@ -15,6 +15,7 @@ namespace seneca {
       bool operator~() const;
       Account& operator+=(double balance);
       Account& operator-=(double balance);
+      Account& operator=(int number);
    };
 
 
