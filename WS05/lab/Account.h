@@ -11,7 +11,7 @@ namespace seneca {
       Account();
       Account(int number, double balance);
       std::ostream& display()const;
-  
+      operator bool() const;
    };
 
 

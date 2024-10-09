@@ -1,0 +1,16 @@
+1. C++ access control is applied at class-level, not object level. So a member function of a class can always directly access every private and protected member of any object of the same class at any place of the code. Public member function may access private members of other objects from the same class - even those passed as arguments.
+
+2. Function overloading in C++ allows several functions to have identical names, but with different parameter lists, inside their scopes.
+
+The following are included in the function signature that can be used for overloading:
+
+Number of Parameters
+Types of Parameters
+Order of Parameters
+
+Return Type:
+The return type is not included in the function signature in regard to overloading.
+
+3. Private members (private:) are accessible only within the class itself. 
+This includes:
+Member Functions: All the functions defined in the class have access to private members. Friend Functions/ Classes: Functions or classes declared as friend have access to private members.

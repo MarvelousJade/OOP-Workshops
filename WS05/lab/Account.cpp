@@ -41,6 +41,16 @@ namespace seneca {
       }
       return cout;
    }
+   Account::operator bool() const { 
+       int digitCount = 1;
+       int n = m_number;
 
+       while (n!= 0) {
+           n = n / 10;
+           ++n;
+       }
+
+       return n >=5 && m_balance >= 0; 
+   }
  
 }

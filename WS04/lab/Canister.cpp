@@ -52,4 +52,108 @@ namespace seneca {
       }
       return cout;
    }
+
+    Canister::Canister() {
+        m_contentName = nullptr;
+        m_diameter = 10.0;
+        m_height = 13.0;
+        m_contentVolume = 0;
+    }
+    
+    Canister::Canister(const char* contentName) {
+        m_contentName = nullptr;
+        m_diameter = 10.0;
+        m_height = 13.0;
+        m_contentVolume = 0;  
+        alocpy(m_contentName, contentName);
+    }
+
+    Canister::Canister(double height, double diameter) {
+        m_contentName = nullptr;
+        m_height = height;
+        m_diameter = diameter;
+        m_contentVolume = 0;
+    }
+
+    Canister::Canister(double height, double diameter, const char* contentName) {
+        m_contentName = nullptr;
+        m_diameter = 10.0;
+        m_height = 13.0;
+        m_contentVolume = 0;
+        if (usable()) {
+            m_height = height;
+            m_diameter = diameter;
+            alocpy(m_contentName, contentName);
+        }
+    }
+
+    Canister::~Canister() {
+        freeMem(m_contentName);
+    }
+
+    Canister& Canister::clear() {
+        freeMem(m_contentName);
+        m_contentVolume = 0.0;
+        return *this;
+    }
+
+
+    Canister& Canister::setContent(const char* contentName) {
+        if (contentName != nullptr && usable()) {
+            if (m_contentName == nullptr || m_contentVolume == 0) {
+                alocpy(m_contentName, contentName);
+            } else if (!hasSameContent(contentName)) {
+                setToUnusable();
+            }
+        }
+
+        return *this;
+    }
+    
+    Canister& Canister::pour(double quantity) {
+        if (usable()) {
+            if (quantity > 0 && quantity + m_contentVolume < capacity()) {
+                m_contentVolume += quantity;
+            }
+            else {
+                setToUnusable();
+            }
+        }
+
+        return *this;
+    }
+    
+    void Canister::setVolume(double volume) {
+        m_contentVolume = volume;
+    }
+
+    Canister& Canister::pour(Canister& can) {
+        double remainingCapacity = 0.0;
+        remainingCapacity = capacity() - volume();
+
+        if (m_contentName == nullptr && can.m_contentName != nullptr) {
+            alocpy(m_contentName, can.m_contentName);
+        }
+       
+        if (usable()) {
+            if (can.volume() > remainingCapacity) {
+                can.setVolume(can.volume() - remainingCapacity);
+                m_contentVolume = capacity();
+            }
+            else {
+                pour(can.volume());
+                can.setVolume(0.0);
+            }
+        }
+
+        if (m_contentName != nullptr && can.m_contentName != nullptr) {
+            if (!hasSameContent(can.m_contentName)) {
+                setToUnusable();
+            }
+        }
+         
+        return *this;
+    }
 }
+
+
