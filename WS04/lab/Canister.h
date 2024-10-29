@@ -41,6 +41,16 @@ namespace seneca {
    public:
 
       std::ostream& display()const;
+      Canister();
+      Canister(const char*);
+      Canister(double, double);
+      Canister(double, double, const char*);
+      ~Canister();
+      Canister& clear();
+      Canister& setContent(const char*);
+      Canister& pour(double);
+      Canister& pour(Canister&);
+      void setVolume(double);
    };
 }
 

@@ -41,6 +41,75 @@ namespace seneca {
       }
       return cout;
    }
+   Account::operator bool() const { 
+       int digitCount = 0;
+       int n = m_number;
 
- 
+       while (n!= 0) {
+           n = n / 10;
+           ++digitCount;
+       }
+
+       return digitCount == 5 && m_balance >= 0; 
+   }
+   Account::operator double() const {
+       return m_balance;
+   }
+   Account::operator int() const {
+       return m_number;
+   }
+   bool Account::operator~() const {
+       return m_number == 0;
+    }
+   Account& Account::operator+=(double balance) {
+       if (*this && balance > 0) m_balance += balance;
+       return *this;
+   }
+   Account& Account::operator-=(double balance) {
+       if (*this && m_balance >= balance && balance > 0) m_balance -= balance;
+       return *this;
+   }
+   Account& Account::operator=(int number) {
+       int n = number;
+       int digitCount = 0;
+
+       while (n!= 0) {
+           n = n / 10;
+           ++digitCount;
+       }     
+       if (digitCount != 5 && m_number == 0) m_number = -1;
+       if(digitCount == 5 && m_number == 0) m_number = number;
+
+       return *this;
+   }
+   Account& Account::operator=(Account& newAccount) {
+       if (m_number == 0 && newAccount) {
+		   m_number = newAccount.m_number;
+		   m_balance = newAccount.m_balance;
+		   newAccount.m_number = 0;
+		   newAccount.m_balance = 0;
+       }
+       return *this;
+   }
+   Account& Account::operator<<(Account& rightAccount) {
+       if (*this && rightAccount && m_number != rightAccount.m_number) {
+           m_balance += rightAccount.m_balance;
+           rightAccount.m_balance = 0;
+       }
+       return *this;
+   }
+   Account& Account::operator>>(Account& rightAccount) {
+       if (*this && rightAccount && m_number != rightAccount.m_number) {
+           rightAccount.m_balance += m_balance;
+            m_balance = 0;
+       }
+       return *this;
+   }
+   double operator+(Account& leftAccount, Account& rightAccount) {
+       double sum = 0.0;
+       if (leftAccount && rightAccount && leftAccount.m_number != rightAccount.m_number) {
+           sum = leftAccount.m_balance + rightAccount.m_balance;
+       }
+       return sum;
+   }
 }
