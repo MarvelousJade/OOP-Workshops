@@ -22,7 +22,7 @@ namespace seneca {
    /// <param name="minVal">int: Minimum acceptable value</param>
    /// <param name="maxVal">int: Maximum acceptable value</param>
    /// <returns>bool: true if the number is successfully read, or false otherwise</returns>
-   
+   int getInt(int& number, int minVal, int maxVal);
 
 }
 #endif // !SENECA_IO_H

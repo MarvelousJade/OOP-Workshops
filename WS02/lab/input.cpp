@@ -30,9 +30,14 @@ namespace seneca {
            // extract an integer from the console and put it in num
            cin >> num;
            // if this action fails (the integer is unreadable)
-           if (cin.fail() || num < minVal || num > maxVal ) {
+           if (cin.fail()) {
                cout << "Bad integer entry, please try again:\n> ";
-               // clear the failure status to activate cin again
+ 
+               cin.clear();
+           }
+           else if (num < minVal || num > maxVal) {
+               cout << "Invalid value, [3<ENTRY<5]\n> ";
+
                cin.clear();
            }
            else {
@@ -42,6 +47,30 @@ namespace seneca {
            cin.ignore(1000, '\n');
        } while (!done);
        return num;
+   }
+
+   int getInt(int& num, int minVal, int maxVal) {
+       num = 0;
+       bool done = false;
+
+       // extract an integer from the console and put it in num
+           cin >> num;
+       // if this action fails (the integer is unreadable)
+       if (cin.fail()) {
+           cout << "Bad integer entry, please try again:\n> ";
+
+           cin.clear();
+           cin.ignore(1000, '\n');
+       }
+       else if (num < minVal || num > maxVal) {          
+           cin.clear();
+       }
+       else {
+           done = true;
+       }
+       // flush the keyboard buffer up to 1000 characters or '\n', whichever comes first
+       cin.ignore(1000, '\n'); 
+       return done;
    }
 }
 

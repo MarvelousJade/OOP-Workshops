@@ -1,0 +1,7 @@
+This workshop effectively worked on key concepts in C++, namely, function overloading, DMA, and compound types. Step 1 was to overload the function getInt(); thereby giving me further experience with input validation, with references, and to handle ranges in an efficient manner. It was able to show the flexibility that function overloading allows when dealing with user input.
+
+Step 2 was about DMA; through this, I was taught how to dynamically allocate and deallocate memory for an array. At the time of the implementation of the function that will reverse the user's input, it dawned on me that proper memory management will prevent memory leaks.
+
+Step 3 was about working with compound types-structs and showed how to work with dynamic structures, manipulate data, and handle memory safely. Those four functions manipulating Contact types really nailed it down for me regarding the handling of dynamic structures and memory deallocation.
+
+This workshop has made me delve a bit deeper into the basics of C++ input handling, its memory management, and use of complex data types.
