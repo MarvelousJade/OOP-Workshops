@@ -1,9 +1,4 @@
-Script started on Thu 07 Nov 2024 07:04:53 PM EST
-==170492== Memcheck, a memory error detector
-==170492== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==170492== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==170492== Command: ws.exe
-==170492== 
+
 | Name            | Emp No | $alary | Teaching Subject     | Sec # | $Dev Pay |
 | Edna Krabappel  | 011222 |  76543 | OOP345 - Object-Orie |     3 |  2296.29 |
 Enter the following:
@@ -28,13 +23,3 @@ List of professors in file!
 | Brandine Spuckl | 095421 |  51500 | OOP244-Introduction  |     2 |  1029.99 |
 | Bumblebee Man   | 117493 |  43554 | OOP345 - Object-Orie |     2 |   871.08 |
 | Carl Carlson    | 928072 |  23678 | OOP345 - Object-Orie |     2 |   473.57 |
-==170492== 
-==170492== HEAP SUMMARY:
-==170492==     in use at exit: 0 bytes in 0 blocks
-==170492==   total heap usage: 49 allocs, 49 frees, 83,232 bytes allocated
-==170492== 
-==170492== All heap blocks were freed -- no leaks are possible
-==170492== 
-==170492== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
-
-Script done on Thu 07 Nov 2024 07:05:01 PM EST
