@@ -169,14 +169,9 @@ Example:
 ```
 
 # Part 1 - LAB (100%) 
-
-Implement four modules for the following classes; **Shape, LblShape, Line** and **Rectangle**
+Implement four modules for the following classes: **Shape, LblShape, Line**, and **Rectangle**.
 
 ![Classes](images/classes.png)
-
-# Part 1 (100%)
-
-Implement four modules for the following classes: **Shape, LblShape, Line**, and **Rectangle**.
 
 ## 1 - The `Shape` Interface
 
