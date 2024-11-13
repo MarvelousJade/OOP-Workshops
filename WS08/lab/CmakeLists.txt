@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(ws8)
+add_executable(ws8 LblShape.cpp Line.cpp Rectangle.cpp Shape.cpp Utils.cpp)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
