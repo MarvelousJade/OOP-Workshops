@@ -1,12 +1,14 @@
-
+Workshop 7 tester Version 1.1.
+Corrected the order of data in console entery test
+==================================================
 | Name            | Emp No | $alary | Teaching Subject     | Sec # | $Dev Pay |
 | Edna Krabappel  | 011222 |  76543 | OOP345 - Object-Orie |     3 |  2296.29 |
 Enter the following:
-John Doe,IPC144 - Introduction to Programming Using C, 3, 12312, 65432<ENTER>
-> John Doe,IPC144 - Introduction to Programming Using C, 3, 12312, 65432
+John Doe, 12312, 65432,IPC144 - Introduction to Programming Using C,3<ENTER>
+> John Doe, 12312, 65432,IPC144 - Introduction to Programming Using C,3
 You enterd:
 | Name            | Emp No | $alary | Teaching Subject     | Sec # | $Dev Pay |
-| John Doe        | 000000 |  76543 | OOP345 - Object-Orie |     3 |  2296.29 |
+| John Doe        | 012312 |  65432 | IPC144 - Introductio |     3 |  1962.96 |
 List of professors in file!
 | Name            | Emp No | $alary | Teaching Subject     | Sec # | $Dev Pay |
 | Abraham Simpson | 052967 |  80084 | OOP244-Introduction  |     2 |  1601.69 |
