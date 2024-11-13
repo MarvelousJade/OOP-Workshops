@@ -10,8 +10,8 @@
 // Revision History
 // -----------------------------------------------------------
 // Name            Date            Reason
-//fardad           11-12           then date order in line 30 was incorrect
-                                   it is fixed now
+//fardad           11-12           the data order in line 33 was incorrect
+//                                 it is fixed now
 /////////////////////////////////////////////////////////////////
 ***********************************************************************/
 
