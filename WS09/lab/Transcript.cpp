@@ -17,9 +17,10 @@
 #include "Utils.h"
 using namespace std;
 namespace seneca {
-   Transcript::Transcript() {
-      char* m_studentName{};
-      size_t m_studentNumber{};
+   Transcript::Transcript(char* studentName, size_t studentNumber) {
+      ut.alocpy(m_studentName, studentName);  
+      m_studentNumber = studentNumber;
+
    }
    
    Transcript::Transcript(const Transcript& other) : Marks(other) {
