@@ -10,7 +10,7 @@ namespace seneca {
       char* m_label;
    protected:
       // Returns the label string for derived classes to access
-      const char* label();
+      const char* label() const;
    public:
       // Default constructor
       LblShape(); 

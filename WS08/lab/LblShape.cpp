@@ -1,5 +1,6 @@
 #include "LblShape.h"
 #include "Utils.h"
+#include <string>
 using namespace std;
 namespace seneca {
    LblShape::LblShape() {
@@ -11,7 +12,12 @@ namespace seneca {
    LblShape::~LblShape() {
       delete[] m_label;
    }
-   LblShape::getSpecs(istreeam& is) {
-      
+   const char* LblShape::label() const {
+      return m_label;
+   }
+   void LblShape::getSpecs(istream& is) {
+      char string[81];
+      is.getline(string, 80, ',');
+      ut.alocpy(m_label,string);
    }
 }

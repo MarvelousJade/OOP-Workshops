@@ -2,26 +2,26 @@
 #define SENECA_SHAPE_H
 #include <iostream>
 #include <istream>
-#include <strstream>
+#include <sstream>
 
 namespace seneca {
 
    class Shape {
    public:
       // Pure virtual function to draw the shape, implemented in derived classes
-      virtual void draw(std::ostream&);
+      virtual void draw(std::ostream&) const = 0;
       // Pure virtual function to get specifications of the shape, implemented in derived classes
-      virtual void getSpecs(std::istream&);
+      virtual void getSpecs(std::istream&) = 0;
 
       // Virtual destructor to ensure proper cleanup of derived class objects
-      ~Shape();
+      virtual ~Shape();
    };
 
    // Operator overload to handle output stream, relies on draw function
-   std::ostrstream& operator<<(std::ostream& os, const Shape& s);  
+   std::ostream& operator<<(std::ostream& os, const Shape& s);  
 
    // Operator overload to handle input stream, relies on getSpecs function
-   std::istrstream& operator>>(std::istream& is, Shape& s);  
+   std::istream& operator>>(std::istream& is, Shape& s);  
 }
 
 #endif // !SENECA_SHAPE_H

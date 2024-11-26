@@ -1,0 +1,3 @@
+1. Abstract base class is a class contains at least one pure virtual function. A pure function is declared by assigning = 0. An abstract base class without any data members is a pure interface. A concrete class provides implementations for all of its member functions.
+2. Always deallocate a pointer before reassigning it to new memory; otherwise It will result in a memory leak because the original allocated memory will no longer be accessible.
+3. Place the const keyword after definition or declaration of a query function.
