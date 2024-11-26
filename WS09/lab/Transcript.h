@@ -25,13 +25,13 @@ namespace seneca {
       size_t m_studentNumber{};
    public:
       // Constructor
-      Transcript(char*, size_t);
+      Transcript(const char*, size_t);
       // Rule of Three
       Transcript(const Transcript&); 
       Transcript& operator=(const Transcript&);
       // Destructor
       ~Transcript();
-      std::ostream& display(std::ostream&);
+      std::ostream& display(std::ostream&) const;
    };
 }
 #endif // !SENECA_TRANSCRIPT_H
