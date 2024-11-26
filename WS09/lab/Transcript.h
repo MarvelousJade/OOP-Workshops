@@ -20,15 +20,18 @@ namespace seneca {
    class Transcript :
       public Marks {
       // character pointer student name
-      
+      char* m_studentName;      
       // unsigned integer or size_t student number
-
+      size_t m_studentNumber;
    public:
       // Constructor
-
+      Transcript();
       // Rule of Three
-
+      Transcript(const Transcript&); 
+      Transcript& operator=(const Transcript&);
       // Destructor
+      ~Transcript();
+      std::ostream& display(std::ostream&);
    };
 }
 #endif // !SENECA_TRANSCRIPT_H
