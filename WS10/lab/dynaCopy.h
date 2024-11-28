@@ -4,15 +4,23 @@
 
 namespace seneca {
    template <typename T>
-   T* dynaCopy(const T* sourceArrPtr, int arrSize) {
+   T* dynaCopy(const T* srcArrPtr, int arrSize) {
       T* newArr = new T[arrSize]; 
       int i =0;
 
-      for (i = 0; i < arrSize; i++) newArr[i] = sourceArrPtr[i];
+      for (i = 0; i < arrSize; i++) newArr[i] = srcArrPtr[i];
 
       return newArr;
    }
    
+   template <typename T>
+   T* dynaCopy(T*& desArr, const T* srcArrPtr, int arrSize) {
+      delete[] desArr;   
+      desArr = nullptr;
+      desArr = dynaCopy(srcArrPtr, arrSize);
+      return desArr;
+   }
+
    template <typename T>
    void prnArray(const T* arrPtr, int arrSize) {
       for(int i = 0; i < arrSize; i++) {
