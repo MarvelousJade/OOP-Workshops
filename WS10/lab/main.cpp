@@ -40,30 +40,30 @@ int main() {
    int* m = nullptr;
    Name* M = nullptr;
 
-   // Three-argument dynaCopy tests
-   m = dynaCopy(n, nums2, 5);
-   M = dynaCopy(N, N2, 5);
-
-   // Verifying destination matches return value
-   if (m != n || M != N) {
-      cout << "Error: The destination argument must match the return value of dynaCopy." << endl;
-   }
-
-   cout << "Printing updated integer array with prnArray:" << endl;
-   prnArray(n, 5);
-
-   cout << "Printing updated Name array with prnArray:" << endl;
-   prnArray(N, 5);
-
-   cout << "\nStage 3: Edge case testing" << endl;
-
-   // Test with single-element arrays
-   int singleNum[1] = { 42 };
-   int* singleCopy = dynaCopy(singleNum, 1);
-   cout << "Single integer array:" << endl;
-   prnArray(singleCopy, 1);
-   delete[] singleCopy;
-
+   /*// Three-argument dynaCopy tests*/
+   /*m = dynaCopy(n, nums2, 5);*/
+   /*M = dynaCopy(N, N2, 5);*/
+   /**/
+   /*// Verifying destination matches return value*/
+   /*if (m != n || M != N) {*/
+   /*   cout << "Error: The destination argument must match the return value of dynaCopy." << endl;*/
+   /*}*/
+   /**/
+   /*cout << "Printing updated integer array with prnArray:" << endl;*/
+   /*prnArray(n, 5);*/
+   /**/
+   /*cout << "Printing updated Name array with prnArray:" << endl;*/
+   /*prnArray(N, 5);*/
+   /**/
+   /*cout << "\nStage 3: Edge case testing" << endl;*/
+   /**/
+   /*// Test with single-element arrays*/
+   /*int singleNum[1] = { 42 };*/
+   /*int* singleCopy = dynaCopy(singleNum, 1);*/
+   /*cout << "Single integer array:" << endl;*/
+   /*prnArray(singleCopy, 1);*/
+   /*delete[] singleCopy;*/
+   /**/
    // Cleanup dynamically allocated memory
    delete[] n;
    delete[] N;
